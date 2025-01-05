@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator with History and Dark Mode</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="menu-toggle" onclick="toggleMenu()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 6H21" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 12H21" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 18H21" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+    <div id="menu">
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        <button onclick="clearHistory()">Clear History</button>
+    </div>
+    <div class="container">
+        <div class="history">
+            <h2>History</h2>
+            <div id="history-list"></div>
+        </div>
+        <div class="calculator">
+            <div class="top-bar">
+                <input type="text" id="display" disabled>
+            </div>
+            <div class="buttons">
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="appendToDisplay('(')">(</button>
+                <button onclick="appendToDisplay(')')">)</button>
+                <button onclick="backspace()">←</button>
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('/')">/</button>
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('*')">*</button>
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button onclick="appendToDisplay('-')">-</button>
+                <button onclick="appendToDisplay('0')">0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+                <button onclick="calculateResult()">=</button>
+                <button onclick="appendToDisplay('+')">+</button>
+                <button onclick="appendToDisplay('Math.sin(')">sin</button>
+                <button onclick="appendToDisplay('Math.cos(')">cos</button>
+                <button onclick="appendToDisplay('Math.tan(')">tan</button>
+                <button onclick="appendToDisplay('Math.log(')">log</button>
+                <button onclick="appendToDisplay('Math.sqrt(')">√</button>
+                <button onclick="appendToDisplay('Math.pow(')">x<sup>y</sup></button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
